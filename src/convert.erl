@@ -18,11 +18,10 @@ loop() ->
 			io:format("converter creating and supervising display.~n"),
 			register(display,spawn_link(fun convert:loop/0)),
 			loop();
-		{F} ->
-			io:format("F " + F + " received"),
+		({convertToC, F}) ->
+			io:format ([F]),
 			loop();
 		_ ->
 			io:format("Unexpected message received.~n"),
 			loop()
 	end.
-
