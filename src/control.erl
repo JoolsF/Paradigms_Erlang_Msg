@@ -25,8 +25,8 @@ loop() ->
 			register(converter,spawn_link(fun convert:loop/0)),
 			converter ! new,
 			loop();
-		{F} ->
-			converter ! F,
+		({convertToC, F}) ->
+			converter ! {convertToC, F},
 			loop();
 		_ ->
 			io:format("Unexpected message received.~n"),
@@ -35,5 +35,6 @@ loop() ->
 
 
 
-% C = spawn(fun control:loop/0). C ! new.
-% erlang:is_process_alive(C)
+% C = spawn(fun control:loop/0). C ! new. C ! {convertToC, 33}.
+% C ! {convertToC, 33}.
+% erlang:is_process_alive(C).
