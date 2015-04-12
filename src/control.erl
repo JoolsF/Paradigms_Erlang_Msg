@@ -25,16 +25,20 @@ loop() ->
 			register(converter,spawn_link(fun convert:loop/0)),
 			converter ! new,
 			loop();
-		({convertToC, F}) ->
-			converter ! {convertToC, F},
+		({convertToCelcius, F}) ->
+			converter ! {convertToCelcius, F},
+			loop();
+		({convertToFahrenheit, C}) ->
+			converter ! {convertToFahrenheit, C},
 			loop();
 		_ ->
-			io:format("Unexpected message received.~n"),
+			io:format("Unexpected message received in control.~n"),
 			loop()
 	end.
 
 
 
-% C = spawn(fun control:loop/0). C ! new. C ! {convertToC, 33}.
-% C ! {convertToC, 33}.
+% C = spawn(fun control:loop/0). C ! new. C ! {convertToCelcius, 33.0}.
+% C ! {convertToCelcius, 33}.
+% C ! {convertToFahrenheit, 33}.
 % erlang:is_process_alive(C).
