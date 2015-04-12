@@ -1,4 +1,5 @@
 %% @author Julian Fenner
+
 -module(convert).
 
 %% ====================================================================
@@ -24,6 +25,7 @@ loop() ->
 			io:format("Unexpected message received in convert.~n"),
 			loop()
 	end.
+
 
 %% ====================================================================
 %% Internal functions

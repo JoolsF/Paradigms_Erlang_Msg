@@ -1,21 +1,15 @@
 %%  @author Julian Fenner
 %% @doc @todo Add description to control.
 
-
-%http://www.erlang.org/doc/getting_started/conc_prog.html
-
 -module(control).
-
-%% ====================================================================
-%% API functions
-%% ====================================================================
 -export([loop/0]).
 
+% TO START SYSTEM
+% C = spawn(fun control:loop/0). C ! new.
 
-
-%% ====================================================================
-%% Internal functions
-%% ====================================================================
+% INSTRUCTIONS
+% C ! {convertToCelcius, C}.
+% C ! {convertToFahrenheit, F}.
 
 
 loop() ->
@@ -35,10 +29,3 @@ loop() ->
 			io:format("Unexpected message received in control.~n"),
 			loop()
 	end.
-
-
-
-% C = spawn(fun control:loop/0). C ! new. C ! {convertToCelcius, 33.0}.
-% C ! {convertToCelcius, 33}.
-% C ! {convertToFahrenheit, 33}.
-% erlang:is_process_alive(C).
