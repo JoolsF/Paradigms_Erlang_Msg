@@ -31,7 +31,7 @@ loop() ->
 %% Internal functions
 %% ====================================================================
 
-% Functions convert result of calculation to list ready for printing in display
+% Functions converts result of calculation to list ready for printing in display
 % Because of strong dynamic typing type needs to be checked here to apply appropriate to_list function.
 % If is_float(number) number is returned to 2 decimal places
 convert_to_list(Number)->

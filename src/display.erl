@@ -1,11 +1,8 @@
 %% @author Julian Fenner
-%% @doc @todo Add description to display.
-
 
 -module(display).
 -export([loop/0]).
 
-% TO DO - concat strings into single line
 loop() ->
 	receive
 		({temperature, C, F}) ->

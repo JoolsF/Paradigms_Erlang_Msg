@@ -1,5 +1,4 @@
 %%  @author Julian Fenner
-%% @doc @todo Add description to control.
 
 -module(control).
 -export([loop/0]).
@@ -8,8 +7,8 @@
 % C = spawn(fun control:loop/0). C ! new.
 
 % INSTRUCTIONS
-% C ! {convertToCelcius, C}.
-% C ! {convertToFahrenheit, F}.
+% C ! {convertToCelcius, 45}.
+% C ! {convertToFahrenheit, 65}.
 
 
 loop() ->
