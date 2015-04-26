@@ -1,11 +1,9 @@
-# Paradigms_Erlang_Msg
+# erlang
+PPL Racket Assignment 2015
 
-TO START SYSTEM
+- To start system run control and send message...  C = spawn(fun control:loop/0). C ! new.
 
-C = spawn(fun control:loop/0). C ! new.
+##INSTRUCTIONS
 
-
-INSTRUCTIONS
-
-C ! {convertToCelcius, C}.
-C ! {convertToFahrenheit, F}.
+1. C ! {convertToCelcius, *enter value in fahrenheit*}.
+2. C ! {convertToFahrenheit, *enter value in celcius here*}.
